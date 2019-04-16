@@ -31,6 +31,11 @@ SOFTWARE.
 #include <stdarg.h>
 #import <ObjFW/ObjFW.h>
 
+#ifndef nullptr
+#define nullptr NULL
+#endif
+
+
 #define overload __attribute__((overloadable))
 
 static inline void OFLogv(OFString* format, va_list args)
@@ -38,6 +43,7 @@ static inline void OFLogv(OFString* format, va_list args)
     OFString * string = [[[OFString alloc] initWithFormat: format arguments:args] autorelease];
     fprintf(stderr, "%s\n", [string UTF8String]); 
 }
+
 /**
  * OFLog
  * 
