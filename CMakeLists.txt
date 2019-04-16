@@ -28,6 +28,8 @@ endif ()
 #
 
 list ( APPEND C_SOURCES src/lines.m )
+list ( APPEND C_SOURCES src/MyClass.m )
+list ( APPEND C_SOURCES src/main.m )
 list ( APPEND C_SOURCES src/ObjCairo/ObjCairoContext.m )
 list ( APPEND C_SOURCES src/ObjGtk/ObjGtk.m )
 list ( APPEND C_SOURCES src/ObjGtk/ObjGtkDrawingArea.m )
@@ -77,7 +79,7 @@ set ( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Xclang -fobjc-runtime=objfw" )
 set ( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Xclang -fblocks" )
 set ( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC -DPIC" )
 set ( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -L/usr/local/lib" )
-set ( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -w -std=c99 -O3" )
+set ( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -w -std=c17 -O3" )
 
 # definitions 
 

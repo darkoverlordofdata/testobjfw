@@ -6,6 +6,8 @@
 
 #include <cairo.h>
 #include <gtk/gtk.h>
+#include "OFLog.h"
+
 
 static ObjCairoContext *cairoContext;
 
@@ -59,9 +61,11 @@ static gboolean clicked(GtkWidget *widget, GdkEventButton *event,
     return TRUE;
 }
 
-int main(int argc, char *argv[]) 
+int main0(int argc, char *argv[]) 
 {
     @autoreleasepool {
+
+        OFLog("Yo!");
 
         cairoContext = [[ObjCairoContext alloc] init];
 
