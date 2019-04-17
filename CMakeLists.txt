@@ -27,8 +27,17 @@ endif ()
 #   application source
 #
 
+list ( APPEND C_SOURCES src/BallObject.m )
 list ( APPEND C_SOURCES src/Game.m )
+list ( APPEND C_SOURCES src/GameLevel.m )
+list ( APPEND C_SOURCES src/GameObject.m )
+list ( APPEND C_SOURCES src/ParticleGenerator.m )
+list ( APPEND C_SOURCES src/ResourceManager.m )
+list ( APPEND C_SOURCES src/Shader.m )
+list ( APPEND C_SOURCES src/Texture2D.m )
+list ( APPEND C_SOURCES src/SpriteRenderer.m )
 list ( APPEND C_SOURCES src/main.m )
+list ( APPEND C_SOURCES src/stb.c )
 #
 #   application includes
 #

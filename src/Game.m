@@ -38,7 +38,7 @@
 - (void)DoCollisions {
 
 }
-- (void)SetKey:(int) key value:(bool) value {
+- (void)SetKey:(int) key to:(bool) value {
 
 }
 - (void)SetState:(GameState) state {

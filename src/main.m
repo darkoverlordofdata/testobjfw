@@ -1,8 +1,8 @@
 #import <ObjFW/ObjFW.h>
-#include <OFLog.h>
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
-#include <Game.h>
+#import <OFLog.h>
+#import <GL/glew.h>
+#import <GLFW/glfw3.h>
+#import <Game.h>
 
 // The Width of the screen
 const GLuint SCREEN_WIDTH = 800;
@@ -11,17 +11,12 @@ const GLuint SCREEN_HEIGHT = 600;
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
 
-// Game Breakout(SCREEN_WIDTH, SCREEN_HEIGHT);
 Game* Breakout;
 
 int main(int argc, char *argv[]) 
 {
     @autoreleasepool {
 
-        id name = @"World";
-
-        OFLog(@"Hello %@", name);
-    
         if (!glfwInit())
         {
             OFLog("Failed glfwInit");
@@ -59,16 +54,23 @@ int main(int argc, char *argv[])
 
         while (!glfwWindowShouldClose(window))
         {
+            // Calculate delta time
+            GLfloat currentFrame = glfwGetTime();
+            deltaTime = currentFrame - lastFrame;
+            lastFrame = currentFrame;
             glfwPollEvents();
+
+            // Manage user input
+            [Breakout ProcessInput:deltaTime];
+            // Update Game state
+            [Breakout Update:deltaTime];
 
             glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT);
-            //Render(Breakout);
+            [Breakout Render];
             glfwSwapBuffers(window);
-
         }
     }
- 
     glfwTerminate();
     return 0;
 }
@@ -79,11 +81,11 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
     // we set the WindowShouldClose property to true, closing the application
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
-    // if (key >= 0 && key < 1024)
-    // {
-    //     if (action == GLFW_PRESS)
-    //         SetKey(Breakout, key, true);
-    //     else if (action == GLFW_RELEASE)
-    //         SetKey(Breakout, key, false);
-    // }
+    if (key >= 0 && key < 1024)
+    {
+        if (action == GLFW_PRESS)
+            [Breakout SetKeykey:true];
+        else if (action == GLFW_RELEASE)
+            [Breakout SetKey:key to:false];
+    }
 }

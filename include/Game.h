@@ -1,7 +1,7 @@
-#import <ObjFW/ObjFW.h>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <tglm/tglm.h>
+#import <ObjFW/ObjFW.h>
 
 // Represents the current state of the game
 typedef enum  {
@@ -39,7 +39,7 @@ static const GLfloat BALL_RADIUS = 12.5f;
 - (void)ResetPlayer;
 - (void)Dispose;
 - (void)DoCollisions;
-- (void)SetKey:(int) key value:(bool) value;
+- (void)SetKey:(int) key to:(bool) value;
 - (void)SetState:(GameState) state;
 
 @property GameState State;	
