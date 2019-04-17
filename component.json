@@ -11,15 +11,15 @@
   "dependencies": {},
   "source": "src",
   "files": [
-    "src/BallObject.m",
     "src/Game.m",
+    "src/BallObject.m",
     "src/GameLevel.m",
     "src/GameObject.m",
     "src/ParticleGenerator.m",
     "src/ResourceManager.m",
     "src/Shader.m",
-    "src/Texture2D.m",
     "src/SpriteRenderer.m",
+    "src/Texture2D.m",
     "src/main.m",
     "src/stb.c"
   ],

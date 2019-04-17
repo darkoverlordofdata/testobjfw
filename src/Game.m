@@ -2,8 +2,7 @@
 
 @implementation Game
 - (id)initWithHeight:(int)height andWidth:(int)width {
-    self = [super init];
-    if (self) {
+    if ((self = [super init])) {
         self.Width = width;
         self.Height = height;
     }

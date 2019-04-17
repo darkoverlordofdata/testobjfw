@@ -3,8 +3,7 @@
 @implementation ParticleGenerator
 
 - (id)initWithShader:(Shader*)shader withSprite:(Texture2D*)sprite withCount:(int)count {
-    self = [super init];
-    if (self) {
+    if ((self = [super init])) {
         self.shader = shader;
         self.texture = sprite;
         self.amount = count;

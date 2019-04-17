@@ -1,5 +1,4 @@
-#import <ObjFW/ObjFW.h>
-#import <OFLog.h>
+#import <Foundation/Foundation.h>
 #import <GL/glew.h>
 #import <GLFW/glfw3.h>
 #import <Game.h>

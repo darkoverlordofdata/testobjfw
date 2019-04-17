@@ -3,8 +3,7 @@
 @implementation SpriteRenderer
 
 - (id)initWithShader:(Shader*)shader {
-    self = [super init];
-    if (self) {
+    if ((self = [super init])) {
         self.shader = shader;
     }
     return self;

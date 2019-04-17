@@ -1,7 +1,7 @@
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
-#include <tglm/tglm.h>
-#import <ObjFW/ObjFW.h>
+#import <GL/glew.h>
+#import <GLFW/glfw3.h>
+#import <tglm/tglm.h>
+#import <Foundation/Foundation.h>
 
 // Represents the current state of the game
 typedef enum  {

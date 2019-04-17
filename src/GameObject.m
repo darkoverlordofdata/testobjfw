@@ -3,8 +3,7 @@
 @implementation GameObject
 
 - (id)initWithName:(OFString*)name withPos:(Vec2)pos withSize:(Vec2)size withSprite:(Texture2D*)sprite withColor:(Vec3)color {
-    self = [super init];
-    if (self) {
+    if ((self = [super init])) {
         self.Position = pos;
         self.Size = size;
         self.Sprite = sprite;

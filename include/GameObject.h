@@ -1,6 +1,6 @@
-#include <GL/glew.h>
-#include <tglm/tglm.h>
-#import <ObjFW/ObjFW.h>
+#import <GL/glew.h>
+#import <tglm/tglm.h>
+#import <Foundation/Foundation.h>
 #import "Texture2D.h"
 #import "SpriteRenderer.h"
 

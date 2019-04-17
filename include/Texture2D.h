@@ -1,10 +1,13 @@
-#include <GL/glew.h>
-#include <tglm/tglm.h>
-#import <ObjFW/ObjFW.h>
+#import <GL/glew.h>
+#import <tglm/tglm.h>
+#import <Foundation/Foundation.h>
 
 @interface Texture2D : OFObject 
 
 - (id)initWithFormat:(int)format ImageFormat:(int)image Path:(OFString*)path;
+- (OFString*)ToString;
+- (void)Generate:(GLuint)width Height:(GLuint)height Data:(unsigned char*)data;
+- (void)Bind;
 
 @property GLuint Id;
 @property char* path;
