@@ -2,7 +2,19 @@
 
 @implementation GameObject
 
-- (id)initWithName:(OFString*)name withPos:(Vec2)pos withSize:(Vec2)size withSprite:(Texture2D*)sprite withColor:(Vec3)color {
+/**
+ * Constructor
+ * 
+ * @param Position initial placement
+ * @param Size sprite size
+ * @param Sprite to display
+ * @param Color tiniting color
+ */
+- (instancetype)initWithName:(OFString*)name 
+                    Position:(Vec2)pos 
+                        Size:(Vec2)size 
+                      Sprite:(Texture2D*)sprite 
+                       Color:(Vec3)color {
     if ((self = [super init])) {
         self.Position = pos;
         self.Size = size;
@@ -12,9 +24,16 @@
     }
     return self;
 }
+
 - (OFString*)ToString {
     return @"GameObject";
 }
+
+/**
+ * Draw
+ * 
+ * @param renderer to draw sprite with
+ */
 - (void)Draw:(SpriteRenderer*)renderer {
 
 }

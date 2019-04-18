@@ -2,7 +2,16 @@
 
 @implementation Texture2D
 
-- (id)initWithFormat:(int)format ImageFormat:(int)image Path:(OFString*)path {
+/**
+ * Texture2D
+ * 
+ * @param InternalFormat for binding the image
+ * @param ImageFormat for binding the image
+ * 
+ */
+- (instancetype)initWithFormat:(int)format 
+                         Image:(int)image 
+                          Path:(OFString*)path {
     if ((self = [super init])) {
         self.InternalFormat = format;
         self.ImageFormat = image;
@@ -16,7 +25,17 @@
     return @"Texture2D";
 }
 
-- (void)Generate:(GLuint)width Height:(GLuint)height Data:(unsigned char*)data {
+/**
+ * Generate
+ * 
+ * @param width of image to generate
+ * @param height of image to generate
+ * @param data bitmap data
+ * 
+ */
+- (void)Generate:(GLuint)width 
+         Height:(GLuint)height 
+            Data:(unsigned char*)data {
 
 }
 

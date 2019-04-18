@@ -2,20 +2,51 @@
 
 @implementation GameLevel
 
-- (id)initWithFile:(GLchar*)path withWidth:(int)width withHeight:(int)height {
+/**
+ * GameLevel
+ */
+- (instancetype)initWithFile:(GLchar*)path 
+                       Width:(int)width 
+                       Height:(int)height {
     self = [super init];
     return [self Load];
 }
+
 - (OFString*)ToString {
     return  @"GameLevel";
 
 }
-- (id)Load:(GLchar*)path withWidth:(int)width withHeight:(int)height {
+
+/**
+ * LoadFrom
+ * 
+ * @oaram file  text file with level data
+ * @param levelWidth of level in tiles
+ * @param levelHeight of level in tiles
+ * 
+ */
+- (instancetype)LoadFrom:(GLchar*)path 
+                   Width:(int)width 
+                  Height:(int)height {
     return self;
 }
+
+/**
+ * Draw
+ * 
+ * @param renderer to use
+ * 
+ */
 - (void)Draw:(SpriteRenderer*)renderer {
 
 }
+
+/**
+ * IsCompleted
+ * 
+ * @returns true when complete
+ * 
+ */
 - (bool)IsCompleted {
     return false;
 }

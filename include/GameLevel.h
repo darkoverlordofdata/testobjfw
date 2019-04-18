@@ -18,11 +18,16 @@ static const Vec3 COLOR4 = { 1.0f, 0.5f, 0.0f };
 static const Vec3 COLOR5 = { 1.0f, 1.0f, 1.0f };
 
 @interface GameLevel : OFObject 
-- (id)initWithFile:(GLchar*)path withWidth:(int)width withHeight:(int)height;
+@property OFArray* Bricks; 
+
+- (instancetype)initWithFile:(GLchar*)path 
+                       Width:(int)width 
+                       Height:(int)height;
 - (OFString*)ToString;
-- (id)Load:(GLchar*)path withWidth:(int)width withHeight:(int)height;
+- (instancetype)LoadFrom:(GLchar*)path 
+                   Width:(int)width 
+                  Height:(int)height;
 - (void)Draw:(SpriteRenderer*)renderer;
 - (bool)IsCompleted;
 
-@property OFArray* Bricks; 
 @end

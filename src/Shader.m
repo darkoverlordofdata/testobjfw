@@ -6,11 +6,21 @@
     return @"Shader";
 }
 
+/**
+ * Use shader
+ */
 - (Shader*)Use {
 
 }
 
-- (void)Compile:(OFString*)vertexSource withFrag:(OFString*)fragmentSource {
+/**
+ * Compile
+ * 
+ * @param vertexSource vertex shader source code
+ * @param fragmentSource fragment shader source code
+ * 
+ */
+- (void)Compile:(OFString*)vertexSource:(OFString*)fragmentSource {
 
 }
 

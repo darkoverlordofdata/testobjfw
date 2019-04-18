@@ -6,12 +6,16 @@
 
 
 @interface SpriteRenderer : OFObject 
-
-- (id)initWithShader:(Shader*)shader;
-- (OFString*)ToString;
-- (SpriteRenderer*)Use;
-- (void)Draw:(Texture2D*)sprite Pos:(Vec2)pos Size:(Vec2)size Rot:(GLfloat)rot Color:(Vec3)color;
-
-@property Shader* shader; 
+@property Shader* Shader; 
 @property GLuint VAO;
+
+- (instancetype)initWithShader:(Shader*)shader;
+- (OFString*)ToString;
+- (void)Dispose;
+- (void)Draw:(Texture2D*)sprite 
+         Pos:(Vec2)pos 
+        Size:(Vec2)size 
+         Rot:(GLfloat)rot 
+       Color:(Vec3)color;
+
 @end

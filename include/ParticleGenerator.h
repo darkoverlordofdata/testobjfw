@@ -17,18 +17,20 @@ struct Particle
 } Particle;
 
 @interface ParticleGenerator : OFObject
+@property struct Particle * Particles;
+@property GLuint Amount;
+@property Shader* Shader;
+@property Texture2D* Texture;
+@property GLuint VAO;
 
-- (id)initWithShader:(Shader*)shader withSprite:(Texture2D*)sprite withCount:(int)count;
+- (instancetype)initWithShader:(Shader*)shader 
+                        Sprite:(Texture2D*)sprite 
+                         Count:(int)count;
 - (OFString*)ToString;
-- (void)Update:(GLfloat)dt withObject:(GameObject*)obj withParticles:(GLuint)count withOffset:(Vec2)ofs;
+- (void)Update:(GLfloat)dt Object:(GameObject*)obj Particles:(GLuint)count Offset:(Vec2)ofs;
 - (void)Draw:(SpriteRenderer*)renderer;
 - (GLuint)firstUnusedParticle;
-- (void)respawnParticle:(struct Particle)particle withObject:(GameObject*) obj withOffset:(Vec2)ofs;
+- (void)respawnParticle:(struct Particle)particle:(GameObject*)object:(Vec2)offset;
 
-@property struct Particle * particles;
-@property GLuint amount;
-@property Shader* shader;
-@property Texture2D* texture;
-@property GLuint VAO;
 
 @end

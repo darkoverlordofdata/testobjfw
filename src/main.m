@@ -2,6 +2,7 @@
 #import <GL/glew.h>
 #import <GLFW/glfw3.h>
 #import <Game.h>
+#import <Texture2D.h>
 
 // The Width of the screen
 const GLuint SCREEN_WIDTH = 800;
@@ -21,6 +22,10 @@ int main(int argc, char *argv[])
             OFLog("Failed glfwInit");
             return 1;
         }
+
+        Texture2D *sprite = [[Texture2D alloc]initWithFormat:0 Image:1 Path:@"/path/to/file.png"];
+        OFLog(@"sprite = %@", sprite.Path);
+
 
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -47,7 +52,7 @@ int main(int argc, char *argv[])
         GLfloat lastFrame = 0.0f;
 
         // Initialize game
-        Breakout = [[Game alloc] initWithWidth:SCREEN_WIDTH andHeight:SCREEN_HEIGHT];
+        Breakout = [[Game alloc] initWithWidth:SCREEN_WIDTH Height:SCREEN_HEIGHT];
         [Breakout Start];
         [Breakout SetState:GAME_ACTIVE];
 
@@ -83,8 +88,8 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
     if (key >= 0 && key < 1024)
     {
         if (action == GLFW_PRESS)
-            [Breakout SetKeykey:true];
+            [Breakout SetKey:key Value:true];
         else if (action == GLFW_RELEASE)
-            [Breakout SetKey:key to:false];
+            [Breakout SetKey:key Value:false];
     }
 }

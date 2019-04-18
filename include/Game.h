@@ -18,6 +18,12 @@ typedef enum  {
     LEFT
 } Direction;
 
+typedef struct Collision {
+    bool first;
+    Direction second; 
+    Vec2 third;
+} Collision;
+
 // Initial size of the player paddle
 static const Vec2 PLAYER_SIZE = { 100, 20 };
 // Initial velocity of the player paddle
@@ -28,8 +34,9 @@ static const Vec2 INITIAL_BALL_VELOCITY = { 100.0f, -350.0f };
 static const GLfloat BALL_RADIUS = 12.5f;
 
 @interface Game : OFObject 
-// - (id)init:(int)height by:(int)width;
-- (id)initWithHeight:(int)height andWidth:(int)width;
+// - (instancetype)init:(int)height by:(int)width;
+- (instancetype)initWithWidth:(int)width 
+                       Height:(int)height;
 - (OFString*)ToString;
 - (void)Start;
 - (void)Update:(GLfloat) dt;
@@ -39,8 +46,10 @@ static const GLfloat BALL_RADIUS = 12.5f;
 - (void)ResetPlayer;
 - (void)Dispose;
 - (void)DoCollisions;
-- (void)SetKey:(int) key to:(bool) value;
+- (void)SetKey:(int)key 
+         Value:(bool) value;
 - (void)SetState:(GameState) state;
+-(Collision)CollisionTuple:(bool)isTrue:(Direction)dir:(Vec2)vec;
 
 @property GameState State;	
 @property bool* Keys;

@@ -6,9 +6,13 @@
 
 @interface ResourceManager : OFObject 
 
-+ (Shader*)LoadShader:(OFString*)vShaderFile withFrag:(OFString*)fShaderFile withName:(OFString*)name;
++ (Shader*)LoadShader:(OFString*)name 
+               Vertex:(OFString*)vertexShaderFile 
+                 Frag:(OFString*)fragmentShaderFile;
 + (Shader*)GetShader:(OFString*)name;
-+ (Texture2D*)LoadTexture:(OFString*)file withAlpha:(bool)alpha withName:(OFString*)name;
++ (Texture2D*)LoadTexture:(OFString*)name 
+                     Path:(OFString*)file 
+                    Alpha:(bool)alpha;
 + (Texture2D*)GetTexture:(OFString*)name;
 
 @property (class, nonatomic, readonly) OFDictionary* shaders;

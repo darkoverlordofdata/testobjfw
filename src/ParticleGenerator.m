@@ -2,11 +2,21 @@
 
 @implementation ParticleGenerator
 
-- (id)initWithShader:(Shader*)shader withSprite:(Texture2D*)sprite withCount:(int)count {
+/**
+ * ParticleGenerator
+ * 
+ * @param shader to use
+ * @param texture to source from
+ * @param amount number of particles to generate
+ * 
+ */
+- (instancetype)initWithShader:(Shader*)shader 
+                        Sprite:(Texture2D*)sprite 
+                         Count:(int)count {
     if ((self = [super init])) {
-        self.shader = shader;
-        self.texture = sprite;
-        self.amount = count;
+        self.Shader = shader;
+        self.Texture = sprite;
+        self.Amount = count;
     }
     return self;
 }
@@ -15,19 +25,33 @@
     return @"ParticleGenerator";
 }
 
-- (void)Update:(GLfloat)dt withObject:(GameObject*)obj withParticles:(GLuint)count withOffset:(Vec2)ofs {
+/**
+ * Update
+ * 
+ * @param dt delta time
+ * @param object GameObject
+ * @param newParticles count
+ * @param offset to display from
+ * 
+ */
+- (void)Update:(GLfloat)dt Object:(GameObject*)obj Particles:(GLuint)count Offset:(Vec2)ofs {
 
 }
 
+/**
+ * Render all particles
+ * 
+ */
 - (void)Draw:(SpriteRenderer*)renderer {
 
 }
 
+// Stores the index of the last particle used (for quick access to next dead particle)
 - (GLuint)firstUnusedParticle {
     return 0;
 }
 
-- (void)respawnParticle:(struct Particle)particle withObject:(GameObject*) obj withOffset:(Vec2)ofs {
+- (void)respawnParticle:(struct Particle)particle:(GameObject*)object:(Vec2)offset {
 
 }
 

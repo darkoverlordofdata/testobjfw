@@ -11,10 +11,6 @@ static const Vec2 GAME_OBJECT_VELOCITY = { 0.0f, 0.0f };
 static const Vec3 GAME_OBJECT_COLOR    = { 1.0f, 1.0f, 1.0f };
 
 @interface GameObject : OFObject 
-- (id)initWithName:(OFString*)name withPos:(Vec2)pos withSize:(Vec2)size withSprite:(Texture2D*)sprite withColor:(Vec3)color;
-- (OFString*)ToString;
-- (void)Draw:(SpriteRenderer*)renderer;
-
 @property Vec2 Position; 
 @property Vec2 Size;
 @property Vec2 Velocity;
@@ -24,5 +20,14 @@ static const Vec3 GAME_OBJECT_COLOR    = { 1.0f, 1.0f, 1.0f };
 @property GLboolean Destroyed;
 @property Texture2D* Sprite;	
 @property OFString* Name;
+
+- (instancetype)initWithName:(OFString*)name 
+                    Position:(Vec2)pos 
+                        Size:(Vec2)size 
+                      Sprite:(Texture2D*)sprite 
+                       Color:(Vec3)color;
+- (OFString*)ToString;
+- (void)Draw:(SpriteRenderer*)renderer;
+
 
 @end
