@@ -5,11 +5,11 @@
 /**
  * GameLevel
  */
-- (instancetype)initWithFile:(GLchar*)path 
+- (instancetype)initWithFile:(OFString*)path 
                        Width:(int)width 
                        Height:(int)height {
     self = [super init];
-    return [self Load];
+    return [self LoadFrom:path Width:width Height:height];
 }
 
 - (OFString*)ToString {
@@ -25,7 +25,7 @@
  * @param levelHeight of level in tiles
  * 
  */
-- (instancetype)LoadFrom:(GLchar*)path 
+- (instancetype)LoadFrom:(OFString*)path 
                    Width:(int)width 
                   Height:(int)height {
     return self;

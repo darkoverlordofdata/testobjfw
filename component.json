@@ -11,8 +11,8 @@
   "dependencies": {},
   "source": "src",
   "files": [
-    "src/Game.m",
     "src/BallObject.m",
+    "src/Game.m",
     "src/GameLevel.m",
     "src/GameObject.m",
     "src/ParticleGenerator.m",
@@ -45,7 +45,7 @@
   },
   "definitions": [],
   "symbols": [],
-  "copy": null,
+  "copy": "..",
   "vapidir": "/src/vapis",
   "console": false
 }

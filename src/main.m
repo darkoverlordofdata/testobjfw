@@ -23,10 +23,6 @@ int main(int argc, char *argv[])
             return 1;
         }
 
-        Texture2D *sprite = [[Texture2D alloc]initWithFormat:0 Image:1 Path:@"/path/to/file.png"];
-        OFLog(@"sprite = %@", sprite.Path);
-
-
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);

@@ -15,7 +15,12 @@
                     Alpha:(bool)alpha;
 + (Texture2D*)GetTexture:(OFString*)name;
 
-@property (class, nonatomic, readonly) OFDictionary* shaders;
-@property (class, nonatomic, readonly) OFDictionary* textures;
++ (Shader*)loadShaderFromFile:(OFString*)vShaderFile:(OFString*)fShaderFile;
++ (Texture2D*)loadTextureFromFile:(OFString*)file:(bool)alpha;
++ (char*)rdbuf:(FILE*)f;
+
+
+@property (class, nonatomic, readonly) OFMutableDictionary* Shaders;
+@property (class, nonatomic, readonly) OFMutableDictionary* Textures;
 
 @end

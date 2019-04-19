@@ -27,8 +27,8 @@ endif ()
 #   application source
 #
 
-list ( APPEND C_SOURCES src/Game.m )
 list ( APPEND C_SOURCES src/BallObject.m )
+list ( APPEND C_SOURCES src/Game.m )
 list ( APPEND C_SOURCES src/GameLevel.m )
 list ( APPEND C_SOURCES src/GameObject.m )
 list ( APPEND C_SOURCES src/ParticleGenerator.m )
@@ -80,7 +80,9 @@ include_directories(AFTER ${INCLUDES})
 #   compile ccode & link executable
 #
 add_executable ( ${PROJECT_NAME} ${C_SOURCES} ${RESOURCES} )
-
+add_custom_command(TARGET ${PROJECT_NAME} 
+                   POST_BUILD COMMAND 
+                   ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${PROJECT_NAME}> .. )
 target_link_libraries ( ${PROJECT_NAME} m objfw objfw_rt dl pthread glfw GLEW OpenGL  )
 install (TARGETS ${PROJECT_NAME} RUNTIME DESTINATION . )
 

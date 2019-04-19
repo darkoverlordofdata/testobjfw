@@ -17,7 +17,7 @@
     radius = radius != 0 ? radius : 12.5f;
     Vec2 size = (Vec2){ radius*2, radius*2 };
     Vec3 color = (Vec3){ 1, 1, 1 };
-    if ((self = [super initWithName:@"ball" Pos:pos Size:size Sprite:sprite Color:color])) 
+    if ((self = [super initWithName:@"ball" Position:pos Size:size Sprite:sprite Color:color])) 
     {
         self.Velocity = vel;
         self.Radius = radius;

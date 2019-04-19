@@ -2,6 +2,10 @@
 #import <GLFW/glfw3.h>
 #import <tglm/tglm.h>
 #import <Foundation/Foundation.h>
+#import "GameLevel.h"
+#import "GameObject.h"
+#import "BallObject.h"
+#import "SpriteRenderer.h"
 
 // Represents the current state of the game
 typedef enum  {
@@ -33,7 +37,23 @@ static const Vec2 INITIAL_BALL_VELOCITY = { 100.0f, -350.0f };
 // Radius of the ball object@property 
 static const GLfloat BALL_RADIUS = 12.5f;
 
+static const Vec2 ZERO = { 0, 0 };
+static const Vec3 WHITE = { 1, 1, 1 };
+
+
 @interface Game : OFObject 
+
+@property GameState State;	
+@property bool* Keys;
+@property GLuint Width;
+@property GLuint Height;
+@property OFArray *Levels; 
+@property GLuint Level;    
+@property OFString *name;
+@property (nonatomic, readonly) SpriteRenderer* Renderer;
+@property (nonatomic, readonly) GameObject* Player;
+@property (nonatomic, readonly) BallObject* Ball;
+
 // - (instancetype)init:(int)height by:(int)width;
 - (instancetype)initWithWidth:(int)width 
                        Height:(int)height;
@@ -51,11 +71,4 @@ static const GLfloat BALL_RADIUS = 12.5f;
 - (void)SetState:(GameState) state;
 -(Collision)CollisionTuple:(bool)isTrue:(Direction)dir:(Vec2)vec;
 
-@property GameState State;	
-@property bool* Keys;
-@property GLuint Width;
-@property GLuint Height;
-@property OFArray* Levels; 
-@property GLuint Level;    
-@property OFString *name;
 @end
